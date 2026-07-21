@@ -49,7 +49,7 @@ def get_config(runner) -> SemanticSegmentationConfig:
         model=SemanticSegmentationModelConfig(
             backbone=Backbone.resnet50
         ),
-        solver=SolverConfig(lr=1e-4, num_epochs=5, batch_sz=4)
+        solver=SolverConfig(lr=1e-4, num_epochs=5, batch_sz=4,class_loss_weights=[1.0,5.0,0.0])
     )
 
     '''backend = PyTorchSemanticSegmentationConfig(
